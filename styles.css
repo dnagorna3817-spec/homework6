@@ -1,0 +1,147 @@
+body{
+    font-family: Arial;
+    margin:0;
+    background:#f4f0ea;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:20px 40px;
+    background:white;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:black;
+}
+
+/* HERO */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px;
+    background:#d8cfc4;
+}
+
+.hero img{
+    width:300px;
+    border-radius:10px;
+}
+
+.hero button{
+    background:#8b6b4c;
+    color:white;
+    padding:10px 20px;
+    border:none;
+}
+
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.p{
+    text-align: center;
+}
+
+/* FEATURES */
+
+.features{
+    padding:50px;
+    background:white;
+}
+
+.feature-container{
+    display:flex;
+    justify-content:space-around;
+    margin-top:30px;
+}
+
+.feature{
+    width:200px;
+    text-align:center;
+}
+
+/* PRODUCTS */
+
+.products{
+    padding:60px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    text-align:center;
+}
+
+.product{
+    max-width: 250px;
+    height: 250px;
+}
+
+.card img{
+    width:100%;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+    padding:60px;
+    background:white;
+}
+
+.reviews{
+    display:flex;
+    gap:20px;
+}
+
+.review{
+    background:#eee;
+    padding:20px;
+    border-radius:8px;
+}
+
+/* SUBSCRIBE */
+
+.subscribe{
+    padding:60px;
+    text-align:center;
+}
+
+.subscribe input{
+    padding:10px;
+    width:250px;
+}
+
+.subscribe button{
+    padding:10px 20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#e0d6cc;
+    padding:20px;
+    text-align:center;
+}

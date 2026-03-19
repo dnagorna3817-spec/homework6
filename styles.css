@@ -4,8 +4,6 @@ body{
     background:#f4f0ea;
 }
 
-/* NAVBAR */
-
 nav{
     display:flex;
     justify-content:space-between;
@@ -24,8 +22,6 @@ nav a{
     text-decoration:none;
     color:black;
 }
-
-/* HERO */
 
 .hero{
     display:flex;
@@ -58,7 +54,6 @@ nav a{
     text-align: center;
 }
 
-/* FEATURES */
 
 .features{
     padding:50px;
@@ -75,8 +70,6 @@ nav a{
     width:200px;
     text-align:center;
 }
-
-/* PRODUCTS */
 
 .products{
     padding:60px;
@@ -104,7 +97,6 @@ nav a{
     width:100%;
 }
 
-/* TESTIMONIALS */
 
 .testimonials{
     padding:60px;
@@ -122,8 +114,6 @@ nav a{
     border-radius:8px;
 }
 
-/* SUBSCRIBE */
-
 .subscribe{
     padding:60px;
     text-align:center;
@@ -137,8 +127,6 @@ nav a{
 .subscribe button{
     padding:10px 20px;
 }
-
-/* FOOTER */
 
 footer{
     background:#e0d6cc;

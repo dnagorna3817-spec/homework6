@@ -1,176 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA Skincare — Discover Your Natural Glow</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 64px);
+    background: var(--cream);
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px;
+  }
+  .hero-content h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+  .hero-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 340px;
+    margin-bottom: 36px;
+    line-height: 1.8;
+  }
+  .hero-image {
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8d8c8 0%, #d4bfa8 50%, #c8a888 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 48px;
+  }
+  .hero-image span {
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--brown);
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
 
-    <link rel="stylesheet" href="styles.css">
+  
+  .why-section { background: var(--warm-white); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .why-item .icon {
+    width: 48px; height: 48px;
+    margin: 0 auto 20px;
+    border: 1px solid var(--taupe);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--brown);
+    font-size: 20px;
+  }
+  .why-item h3 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: var(--charcoal);
+  }
+  .why-item p { font-size: 12.5px; color: var(--text-muted); line-height: 1.8; }
 
-    <style>
-        h2{
-            text-align:center;
-        }
-    </style>
-</head>    
+ 
+  .featured-section { background: var(--cream); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 48px;
+  }
+
+  
+  .testimonials-section { background: var(--warm-white); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .testimonial-card { background: var(--cream); padding: 28px 24px; }
+  .stars { color: var(--gold); font-size: 13px; margin-bottom: 14px; }
+  .testimonial-text {
+    font-size: 13px;
+    color: var(--charcoal);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-style: italic;
+    font-family: var(--font-display);
+  }
+  .testimonial-author { font-size: 11px; letter-spacing: 1px; color: var(--text-muted); }
+
+  
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-content { padding: 56px 32px; order: 2; }
+    .hero-image { order: 1; min-height: 300px; }
+    .why-grid { grid-template-columns: 1fr; gap: 36px; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .hero-content { padding: 40px 20px; }
+    .products-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
 <body>
 
 <nav>
-    <h1>AURA</h1>
-
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
+  <a href="index.html" class="nav-logo">AURA</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="openMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<section class="hero">
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMenu()">&#10005;</button>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-    <div class="hero-text">
-        <h2>Discover Your Natural Glow</h2>
+<div class="page-wrap">
 
-        <p class="p" style="color:#666;">Experience the power of nature with our luxurious skincare.</p>
-
-        <button>Shop Now</button>
+  
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Discover Your<br><em>Natural Glow</em></h1>
+      <p>Experience the power of nature with our luxurious, science-backed skincare formulations crafted for every skin type.</p>
+      <a href="products.html" class="btn-primary">Shop Now</a>
     </div>
-
     <div class="hero-image">
-        <img src="images/hero.jpg" alt="beauty">
+     <img src="/images/hero.jpg" style="max-width: 542px; border-radius: 20px;">
     </div>
+  </div>
 
-</section>
-
-<section class="features">
-
-    <h2>Why Choose AURA</h2>
-
-    <div class="feature-container">
-
-        <div class="feature">
-            <h3>Natural Ingredients</h3>
-            <p>Formulated with pure botanical extracts.</p>
-        </div>
-
-        <div class="feature">
-            <h3>Eco-Friendly Packaging</h3>
-            <p>Sustainable recyclable packaging.</p>
-        </div>
-
-        <div class="feature">
-            <h3>Dermatologist Tested</h3>
-            <p>Clinically proven formulas tested by experts.</p>
-        </div>
-
+ 
+  <section class="why-section">
+    <h2 class="section-title">Why Choose AURA</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="icon">🌿</div>
+        <h3>Natural Ingredients</h3>
+        <p>Formulated with pure botanical extracts and organic compounds for gentle, effective care.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon">♻</div>
+        <h3>Eco-Friendly Packaging</h3>
+        <p>Sustainable, recyclable packaging designed to minimise environmental impact at every step.</p>
+      </div>
+      <div class="why-item">
+        <div class="icon">✦</div>
+        <h3>Dermatologist Tested</h3>
+        <p>Clinically proven formulas tested by leading dermatologists for safety and efficacy.</p>
+      </div>
     </div>
+  </section>
 
-</section>
-
-<section class="products">
-
-    <h2>Featured Products</h2>
-
-    <div class="product-grid">
-
-        <div class="card">
-            <img class="product" src="images/ordinary.jpg">
-            <h4>Radiance Serum</h4>
-            <p>$48</p>
-            <button>Add to Cart</button>
+  
+  <section class="featured-section">
+    <h2 class="section-title">Featured Products</h2>
+    <p class="section-sub">Our bestselling formulations, loved by thousands of customers worldwide.</p>
+    <div class="products-grid">
+      <div class="product-card">
+       <img src="/images/ordinary.jpg" class="product-card-img">
+        <div class="product-card-body">
+          <div class="product-badge">Serum</div>
+          <div class="product-name">Radiance Serum</div>
+          <div class="product-desc">Vitamin C brightening serum</div>
+          <div class="product-footer">
+            <span class="product-price">$88</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
         </div>
-
-        <div class="card">
-            <img class="product" src="images/glasscream.jpg">
-            <h4>Hydra Cream</h4>
-            <p>$54</p>
-            <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="/images/glasscream.jpg" class="product-card-img">
+        <div class="product-card-body">
+          <div class="product-badge">Moisturiser</div>
+          <div class="product-name">Hydra Cream</div>
+          <div class="product-desc">Deep moisture face cream</div>
+          <div class="product-footer">
+            <span class="product-price">$54</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
         </div>
-
-        <div class="card">
-            <img class="product" src="images/patches.jpg">
-            <h4>Hydra Patches</h4>
-            <p>$46</p>
-            <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="/images/patches.jpg" class="product-card-img">
+        <div class="product-card-body">
+          <div class="product-badge">Mask</div>
+          <div class="product-name">Hydra Patches</div>
+          <div class="product-desc">Deep moisture face mask</div>
+          <div class="product-footer">
+            <span class="product-price">$48</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
         </div>
-
-        <div class="card">
-            <img class="product" src="images/whitecream.jpg">
-            <h4>Radiance Serum</h4>
-            <p>$48</p>
-            <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="/images/greencream.jpg" class="product-card-img">
+        <div class="product-card-body">
+          <div class="product-badge">Toner</div>
+          <div class="product-name">Glow Essence</div>
+          <div class="product-desc">Revitalising facial oil</div>
+          <div class="product-footer">
+            <span class="product-price">$72</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
         </div>
-
-        <div class="card">
-            <img class="product" src="images/scrab.jpg">
-            <h4>Hydra Cream</h4>
-            <p>$54</p>
-            <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="/images/scrab.jpg" class="product-card-img">
+        <div class="product-card-body">
+          <div class="product-badge">Scrub</div>
+          <div class="product-name">Baby Scrub</div>
+          <div class="product-desc">Revitalising facial kit</div>
+          <div class="product-footer">
+            <span class="product-price">$60</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
         </div>
-
-        <div class="card">
-            <img class="product" src="images/greencream.jpg">
-            <h4>Hydra Patches</h4>
-            <p>$46</p>
-            <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="/images/whitecream.png" class="product-card-img">
+        <div class="product-card-body">
+          <div class="product-badge">Moisturiser</div>
+          <div class="product-name">Cream</div>
+          <div class="product-desc">Revitalising facial oil</div>
+          <div class="product-footer">
+            <span class="product-price">$29</span>
+            <button class="btn-cart">Add to Cart</button>
+          </div>
         </div>
-
+      </div>
     </div>
-
-</section>
-
-<section class="testimonials">
-
-    <h2>What Our Customers Say</h2>
-
-    <div class="reviews">
-
-        <div class="review">
-            <p>"This serum transformed my skin! I noticed a visible glow within just two weeks. Absolutely love it."</p>
-            <strong>— Sarah Mitchell</strong>
-        </div>
-
-        <div class="review">
-            <p>"The most gentle yet effective skincare I've ever used. Perfect for my sensitive skin."</p>
-            <strong>— Emily Chen</strong>
-        </div>
-
-        <div class="review">
-            <p>"Finally found a brand that delivers on its promises. My skin has never looked better!"</p>
-            <strong>— Jessica Brown</strong>
-        </div>
-
+    <div class="center">
+      <a href="products.html" class="btn-outline">View All Products</a>
     </div>
+  </section>
 
-</section>
+ 
+  <section class="testimonials-section">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"This serum transformed my skin! I noticed a visible glow within just two weeks. Absolutely love it."</p>
+        <p class="testimonial-author">— Sarah Mitchell</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The formulas are so clean yet incredibly effective. My skin has never felt this healthy and balanced."</p>
+        <p class="testimonial-author">— Sarah Mitchell</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The most gentle yet effective skincare I've ever used. Perfect for my sensitive skin."</p>
+        <p class="testimonial-author">— Emily Choe</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Finally found a brand that delivers on its promises. My skin has never looked better."</p>
+        <p class="testimonial-author">— Joyia Brown</p>
+      </div>
+    </div>
+  </section>
 
-<section class="subscribe">
+  
+  <div class="newsletter-section">
+    <h2 class="section-title">Join Our Beauty Community</h2>
+    <p class="section-sub">Subscribe to receive exclusive offers, skincare tips, and early access to new products.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email">
+      <button class="btn-primary">Subscribe</button>
+    </div>
+  </div>
 
-    <h2>Join Our Beauty Community</h2>
-
-    <p>Subscribe for skincare tips and offers</p>
-
-    <form>
-
-        <input type="email" placeholder="Enter your email">
-
-        <button>Subscribe</button>
-
-    </form>
-
-</section>
-
-<footer>
-    <div>
-        <h1>AURA</h1>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">AURA</a>
         <p>Natural skincare for radiant, healthy skin.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Service</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">FB</a>
+          <a href="#" class="social-link">PT</a>
+        </div>
+      </div>
     </div>
+    <div class="footer-bottom">© 2026 AURA Skincare. All rights reserved.</div>
+  </footer>
 
-    <hr>
-
-<p>© 2026 AURA Skincare. All rights reserved.</p>
-
-</footer>
-
+</div>
 </body>
 </html>

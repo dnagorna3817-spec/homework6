@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA Skincare — About Us</title>
+<link rel="stylesheet" href="style.css">
+<style>
+ 
+  .about-hero {
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    padding: 80px 64px;
+  }
+  .about-hero-content { position: relative; z-index: 1; }
+  .about-hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--taupe);
+    margin-bottom: 20px;
+    font-weight: 500;
+    display: block;
+  }
+  .about-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.1;
+    max-width: 480px;
+  }
+  .about-hero-deco {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 50%;
+    background: linear-gradient(to left, rgba(200,180,154,0.55) 0%, transparent 100%);
+    pointer-events: none;
+  }
+  .about-hero-deco::after {
+    content: '';
+    position: absolute;
+    right: 48px; top: 50%;
+    transform: translateY(-50%);
+    width: 200px; height: 200px;
+    border: 1px solid rgba(201,185,154,0.4);
+    border-radius: 50%;
+  }
+
+  
+  .mission-section {
+    background: var(--warm-white);
+    text-align: center;
+    padding: 88px 48px;
+  }
+  .mission-quote {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 400;
+    color: var(--charcoal);
+    max-width: 720px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .mission-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  
+  .values-section { background: var(--cream); }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .value-card {
+    background: var(--warm-white);
+    padding: 40px 32px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .value-card:hover { transform: translateY(-4px); }
+  .value-card .icon {
+    width: 56px; height: 56px;
+    border: 1px solid var(--taupe);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 22px;
+    color: var(--brown);
+  }
+  .value-card h3 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    color: var(--charcoal);
+  }
+  .value-card p { font-size: 13px; color: var(--text-muted); line-height: 1.85; }
+
+  
+  .story-section { background: var(--warm-white); }
+  .story-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .story-inner p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.95;
+    margin-bottom: 24px;
+  }
+  .story-inner p:last-child { margin-bottom: 0; }
+
+  
+  .stats-section {
+    background: var(--charcoal);
+    padding: 72px 48px;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 400;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+  }
+
+  
+  .cta-section {
+    background: var(--cream);
+    text-align: center;
+    padding: 88px 48px;
+  }
+
+  
+  @media (max-width: 900px) {
+    .about-hero { padding: 64px 32px; min-height: 280px; }
+    .about-hero-deco { width: 30%; }
+    .mission-section { padding: 64px 24px; }
+    .values-section { padding: 56px 24px; }
+    .values-grid { grid-template-columns: 1fr; gap: 20px; }
+    .story-section { padding: 56px 24px; }
+    .stats-section { padding: 56px 24px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-section { padding: 64px 24px; }
+  }
+  @media (max-width: 580px) {
+    .about-hero { padding: 48px 20px; min-height: 220px; }
+    .about-hero-deco { display: none; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">AURA</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="openMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMenu()">&#10005;</button>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-wrap">
+
+
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <span class="about-hero-eyebrow">Founded 2018</span>
+      <h1>About<br>AURA</h1>
+    </div>
+    <div class="about-hero-deco"></div>
+  </div>
+
+  
+  <section class="mission-section">
+    <h2 class="section-title" style="margin-bottom:32px;">Our Mission</h2>
+    <p class="mission-quote">"To empower people to feel confident in their skin by providing transformative skincare solutions that are natural, ethical, and scientifically proven."</p>
+    <p class="mission-sub">We believe beauty should never come at the expense of your health or our environment.</p>
+  </section>
+
+
+  <section class="values-section">
+    <h2 class="section-title">Our Values</h2>
+    <p class="section-sub">Three principles guide everything we create.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="icon">♡</div>
+        <h3>Passion for Purity</h3>
+        <p>We believe in the power of clean, natural ingredients. Every formula is crafted with care, using only the finest botanical extracts and sustainable sources.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">✦</div>
+        <h3>Science Meets Nature</h3>
+        <p>Our research team combines cutting-edge dermatological science with time-honoured natural remedies to create products that truly deliver results.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">♻</div>
+        <h3>Sustainable Beauty</h3>
+        <p>We're committed to protecting our planet. From eco-friendly packaging to ethical sourcing, sustainability is at the heart of everything we do.</p>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="story-section">
+    <h2 class="section-title" style="margin-bottom:52px;">Our Story</h2>
+    <div class="story-inner">
+      <p>AURA began when our founder, Dr. Elena Martinez, struggled to find skincare products that were both effective and truly natural. As a dermatologist and botanist, she knew there had to be a better way — one that didn't compromise between performance and purity.</p>
+      <p>After years of research and development, the first AURA products were created in a small laboratory, combining traditional botanical wisdom with modern dermatological science. The results were extraordinary, and word spread quickly.</p>
+      <p>Today, AURA has grown into a beloved skincare brand, but our commitment remains unchanged: to create products that honor both your skin and the earth. Every bottle represents our dedication to transparency, sustainability, and transformative results.</p>
+      <p>We're grateful to be part of your skincare journey and look forward to continuing to innovate and inspire for years to come.</p>
+    </div>
+  </section>
+
+  
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number">50K+</div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div>
+        <div class="stat-number">28</div>
+        <div class="stat-label">Products</div>
+      </div>
+      <div>
+        <div class="stat-number">8</div>
+        <div class="stat-label">Years of Research</div>
+      </div>
+      <div>
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Natural Origin</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="cta-section">
+    <h2 class="section-title" style="margin-bottom:16px;">Ready to Experience the Difference?</h2>
+    <p class="section-sub" style="margin-bottom:36px;">Explore our collection and discover your perfect skincare routine.</p>
+    <a href="products.html" class="btn-primary">Shop Products</a>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">AURA</a>
+        <p>Natural skincare for radiant, healthy skin.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Service</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" class="social-link">IG</a>
+          <a href="#" class="social-link">FB</a>
+          <a href="#" class="social-link">PT</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 AURA Skincare. All rights reserved.</div>
+  </footer>
+
+</div>
+</body>
+</html>

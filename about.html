@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AURA Skincare — About Us</title>
+<meta name="description" content="Learn about AURA Skincare, our clean beauty mission, sustainable skincare values, and the natural skincare philosophy behind every product we create.">
+<meta name="keywords" content="about skincare brand, clean beauty brand, sustainable skincare, natural skincare philosophy, dermatologist skincare brand">
+<title>About AURA Skincare | Clean Beauty Brand Story</title>
 <link rel="stylesheet" href="style.css">
 <style>
- 
   .about-hero {
     background: var(--cream);
     position: relative;
@@ -16,7 +17,10 @@
     align-items: center;
     padding: 80px 64px;
   }
-  .about-hero-content { position: relative; z-index: 1; }
+  .about-hero-content {
+    position: relative;
+    z-index: 1;
+  }
   .about-hero-eyebrow {
     font-size: 11px;
     letter-spacing: 2px;
@@ -32,26 +36,29 @@
     font-weight: 400;
     color: var(--charcoal);
     line-height: 1.1;
-    max-width: 480px;
+    max-width: 560px;
   }
   .about-hero-deco {
     position: absolute;
-    right: 0; top: 0; bottom: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     width: 50%;
     background: linear-gradient(to left, rgba(200,180,154,0.55) 0%, transparent 100%);
     pointer-events: none;
   }
   .about-hero-deco::after {
-    content: '';
+    content: "";
     position: absolute;
-    right: 48px; top: 50%;
+    right: 48px;
+    top: 50%;
     transform: translateY(-50%);
-    width: 200px; height: 200px;
+    width: 200px;
+    height: 200px;
     border: 1px solid rgba(201,185,154,0.4);
     border-radius: 50%;
   }
 
-  
   .mission-section {
     background: var(--warm-white);
     text-align: center;
@@ -75,7 +82,6 @@
     line-height: 1.8;
   }
 
-  
   .values-section { background: var(--cream); }
   .values-grid {
     display: grid;
@@ -92,10 +98,13 @@
   }
   .value-card:hover { transform: translateY(-4px); }
   .value-card .icon {
-    width: 56px; height: 56px;
+    width: 56px;
+    height: 56px;
     border: 1px solid var(--taupe);
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto 24px;
     font-size: 22px;
     color: var(--brown);
@@ -107,9 +116,12 @@
     margin-bottom: 14px;
     color: var(--charcoal);
   }
-  .value-card p { font-size: 13px; color: var(--text-muted); line-height: 1.85; }
+  .value-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.85;
+  }
 
-  
   .story-section { background: var(--warm-white); }
   .story-inner {
     max-width: 720px;
@@ -123,7 +135,6 @@
   }
   .story-inner p:last-child { margin-bottom: 0; }
 
-  
   .stats-section {
     background: var(--charcoal);
     padding: 72px 48px;
@@ -151,109 +162,105 @@
     font-weight: 400;
   }
 
-  
   .cta-section {
     background: var(--cream);
     text-align: center;
     padding: 88px 48px;
   }
 
-  
   @media (max-width: 900px) {
-    .about-hero { padding: 64px 32px; min-height: 280px; }
+    .about-hero {
+      padding: 64px 32px;
+      min-height: 280px;
+    }
     .about-hero-deco { width: 30%; }
     .mission-section { padding: 64px 24px; }
     .values-section { padding: 56px 24px; }
-    .values-grid { grid-template-columns: 1fr; gap: 20px; }
+    .values-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
     .story-section { padding: 56px 24px; }
     .stats-section { padding: 56px 24px; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .cta-section { padding: 64px 24px; }
   }
   @media (max-width: 580px) {
-    .about-hero { padding: 48px 20px; min-height: 220px; }
+    .about-hero {
+      padding: 48px 20px;
+      min-height: 220px;
+    }
     .about-hero-deco { display: none; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
   }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-<nav>
-  <a href="index.html" class="nav-logo">AURA</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="nav-hamburger" onclick="openMenu()" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<header class="site-header">
+  <nav aria-label="Primary navigation">
+    <a href="index.html" class="nav-logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="closeMenu()">&#10005;</button>
-  <a href="index.html">Home</a>
-  <a href="products.html">Products</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<div class="page-wrap">
-
-
-  <div class="about-hero">
+<main class="page-wrap" id="main-content">
+  <section class="about-hero" aria-labelledby="about-hero-title">
     <div class="about-hero-content">
       <span class="about-hero-eyebrow">Founded 2018</span>
-      <h1>About<br>AURA</h1>
+      <h1 id="about-hero-title">About AURA clean skincare</h1>
     </div>
-    <div class="about-hero-deco"></div>
-  </div>
-
-  
-  <section class="mission-section">
-    <h2 class="section-title" style="margin-bottom:32px;">Our Mission</h2>
-    <p class="mission-quote">"To empower people to feel confident in their skin by providing transformative skincare solutions that are natural, ethical, and scientifically proven."</p>
-    <p class="mission-sub">We believe beauty should never come at the expense of your health or our environment.</p>
+    <div class="about-hero-deco" aria-hidden="true"></div>
   </section>
 
+  <section class="mission-section">
+    <h2 class="section-title" style="margin-bottom:32px;">Our clean skincare mission</h2>
+    <p class="mission-quote">"To empower people to feel confident in their skin by providing transformative skincare solutions that are natural, ethical, and scientifically proven."</p>
+    <p class="mission-sub">We believe beauty should never come at the expense of your skin health or the environment, which is why AURA combines natural skincare ingredients with proven formulation standards.</p>
+  </section>
 
   <section class="values-section">
-    <h2 class="section-title">Our Values</h2>
-    <p class="section-sub">Three principles guide everything we create.</p>
+    <h2 class="section-title">Values behind our natural skincare brand</h2>
+    <p class="section-sub">Three principles guide every clean beauty product, ingredient choice, and customer experience at AURA.</p>
     <div class="values-grid">
-      <div class="value-card">
-        <div class="icon">♡</div>
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">♡</div>
         <h3>Passion for Purity</h3>
-        <p>We believe in the power of clean, natural ingredients. Every formula is crafted with care, using only the finest botanical extracts and sustainable sources.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon">✦</div>
+        <p>We believe in the power of clean, natural ingredients. Every formula is crafted with botanical extracts and responsibly sourced materials for effective skincare.</p>
+      </article>
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">✦</div>
         <h3>Science Meets Nature</h3>
-        <p>Our research team combines cutting-edge dermatological science with time-honoured natural remedies to create products that truly deliver results.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon">♻</div>
+        <p>Our research team combines dermatological science with time-honored plant knowledge to create skincare products that truly deliver visible results.</p>
+      </article>
+      <article class="value-card">
+        <div class="icon" aria-hidden="true">♻</div>
         <h3>Sustainable Beauty</h3>
-        <p>We're committed to protecting our planet. From eco-friendly packaging to ethical sourcing, sustainability is at the heart of everything we do.</p>
-      </div>
+        <p>From eco-friendly packaging to mindful sourcing, sustainability shapes how we build a skincare brand that respects both people and planet.</p>
+      </article>
     </div>
   </section>
 
- 
   <section class="story-section">
-    <h2 class="section-title" style="margin-bottom:52px;">Our Story</h2>
+    <h2 class="section-title" style="margin-bottom:52px;">The story of our skincare brand</h2>
     <div class="story-inner">
-      <p>AURA began when our founder, Dr. Elena Martinez, struggled to find skincare products that were both effective and truly natural. As a dermatologist and botanist, she knew there had to be a better way — one that didn't compromise between performance and purity.</p>
-      <p>After years of research and development, the first AURA products were created in a small laboratory, combining traditional botanical wisdom with modern dermatological science. The results were extraordinary, and word spread quickly.</p>
-      <p>Today, AURA has grown into a beloved skincare brand, but our commitment remains unchanged: to create products that honor both your skin and the earth. Every bottle represents our dedication to transparency, sustainability, and transformative results.</p>
-      <p>We're grateful to be part of your skincare journey and look forward to continuing to innovate and inspire for years to come.</p>
+      <p>AURA began when our founder, Dr. Elena Martinez, struggled to find skincare products that were both effective and truly natural. As a dermatologist and botanist, she knew there had to be a better way to create clean beauty products without compromising performance.</p>
+      <p>After years of research and development, the first AURA formulas were created in a small laboratory, combining traditional botanical wisdom with modern skincare science. The results were extraordinary, and word spread quickly.</p>
+      <p>Today, AURA has grown into a trusted natural skincare brand, but our commitment remains unchanged: to create products that honor both your skin and the earth through transparency, sustainability, and measurable results.</p>
+      <p>We are grateful to be part of your skincare journey and look forward to continuing to innovate with cleaner ingredients, stronger routines, and healthier skin outcomes.</p>
     </div>
   </section>
 
-  
-  <div class="stats-section">
+  <section class="stats-section" aria-label="AURA brand statistics">
     <div class="stats-grid">
       <div>
         <div class="stat-number">50K+</div>
@@ -272,50 +279,48 @@
         <div class="stat-label">Natural Origin</div>
       </div>
     </div>
-  </div>
+  </section>
 
-  
-  <div class="cta-section">
-    <h2 class="section-title" style="margin-bottom:16px;">Ready to Experience the Difference?</h2>
-    <p class="section-sub" style="margin-bottom:36px;">Explore our collection and discover your perfect skincare routine.</p>
-    <a href="products.html" class="btn-primary">Shop Products</a>
-  </div>
+  <section class="cta-section">
+    <h2 class="section-title" style="margin-bottom:16px;">Build your natural skincare routine</h2>
+    <p class="section-sub" style="margin-bottom:36px;">Explore our collection of clean skincare essentials and discover the formulas that match your skin goals.</p>
+    <a href="products.html" class="btn-primary">Shop AURA Skincare Products</a>
+  </section>
+</main>
 
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">AURA</a>
-        <p>Natural skincare for radiant, healthy skin.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Customer Service</h4>
-        <ul>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="#">Shipping Info</a></li>
-          <li><a href="#">Returns</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#" class="social-link">IG</a>
-          <a href="#" class="social-link">FB</a>
-          <a href="#" class="social-link">PT</a>
-        </div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">AURA</a>
+      <p>Natural skincare products for radiant, healthy skin.</p>
+    </div>
+    <div class="footer-col">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About AURA</a></li>
+        <li><a href="contact.html">Contact Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Customer Service</h2>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#shipping-information">Shipping Information</a></li>
+        <li><a href="contact.html#returns-policy">Returns Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Follow Us</h2>
+      <div class="social-links">
+        <a href="https://www.instagram.com/" class="social-link" aria-label="Visit AURA on Instagram">Instagram</a>
+        <a href="https://www.facebook.com/" class="social-link" aria-label="Visit AURA on Facebook">Facebook</a>
+        <a href="https://www.pinterest.com/" class="social-link" aria-label="Visit AURA on Pinterest">Pinterest</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 AURA Skincare. All rights reserved.</div>
-  </footer>
-
-</div>
+  </div>
+  <div class="footer-bottom">© 2026 AURA Skincare. All rights reserved.</div>
+</footer>
 </body>
 </html>

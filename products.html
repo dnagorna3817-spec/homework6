@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AURA Skincare — Our Products</title>
+<meta name="description" content="Browse AURA natural skincare products including vitamin C serum, moisturisers, cleansers, toners, and face masks for radiant, healthy skin.">
+<meta name="keywords" content="skincare products, natural skincare products, vitamin C serum, hydrating moisturiser, face cleanser, face mask, botanical toner">
+<title>AURA Products | Natural Skincare Collection</title>
 <link rel="stylesheet" href="style.css">
 <style>
   .page-hero {
@@ -12,7 +14,6 @@
     text-align: center;
   }
 
-  
   .filter-bar {
     display: flex;
     justify-content: center;
@@ -49,12 +50,12 @@
     max-width: 920px;
     margin: 0 auto;
   }
-  .product-card .product-card-img { aspect-ratio: 4/3; }
+  .product-card .product-card-img { aspect-ratio: 4 / 3; }
+  .product-card.full {
+    grid-column: 1 / -1;
+    max-width: 440px;
+  }
 
-
-  .product-card.full { grid-column: 1 / -1; max-width: 440px; }
-
-  
   @media (max-width: 900px) {
     .page-hero { padding: 56px 24px 40px; }
     .filter-bar { padding: 24px 24px 0; }
@@ -62,209 +63,194 @@
   }
   @media (max-width: 580px) {
     .products-grid-2col { grid-template-columns: 1fr; }
-    .product-card.full { max-width: 100%; grid-column: auto; }
-    .filter-bar { padding: 20px 20px 0; gap: 8px; }
+    .product-card.full {
+      max-width: 100%;
+      grid-column: auto;
+    }
+    .filter-bar {
+      padding: 20px 20px 0;
+      gap: 8px;
+    }
     .page-hero { padding: 48px 20px 32px; }
   }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-<nav>
-  <a href="index.html" class="nav-logo">AURA</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="products.html" class="active">Products</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <button class="nav-hamburger" onclick="openMenu()" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<header class="site-header">
+  <nav aria-label="Primary navigation">
+    <a href="index.html" class="nav-logo">AURA</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="closeMenu()">&#10005;</button>
-  <a href="index.html">Home</a>
-  <a href="products.html">Products</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<div class="page-wrap">
-
-  <div class="page-hero">
-    <h1 class="section-title" style="margin-bottom:14px;">Our Products</h1>
-    <p class="section-sub" style="margin-bottom:0;">Discover our complete collection of natural skincare essentials,<br>carefully formulated for your skin's needs.</p>
-  </div>
-
-  <div class="filter-bar">
-    <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
-    <button class="filter-btn" onclick="filterProducts('serum', this)">Serums</button>
-    <button class="filter-btn" onclick="filterProducts('moisturiser', this)">Moisturisers</button>
-    <button class="filter-btn" onclick="filterProducts('mask', this)">Masks</button>
-    <button class="filter-btn" onclick="filterProducts('toner', this)">Toners</button>
-    <button class="filter-btn" onclick="filterProducts('cleanser', this)">Cleansers</button>
-  </div>
+<main class="page-wrap" id="main-content">
+  <section class="page-hero" aria-labelledby="products-title">
+    <h1 class="section-title" id="products-title" style="margin-bottom:14px;">Natural skincare products for every routine</h1>
+    <p class="section-sub" style="margin-bottom:0;">Discover our clean skincare collection of serums, moisturisers, cleansers, toners, and masks carefully formulated for glowing, balanced skin.</p>
+  </section>
 
   <section class="products-section">
     <div class="products-grid-2col" id="productsGrid">
-
-      <div class="product-card" data-cat="serum">
-        <img src="images/mask.png" class="product-card-img">
+      <article class="product-card" data-cat="serum">
+        <img src="images/mask.png" class="product-card-img" alt="Radiance Serum skincare bottle with vitamin C brightening formula" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Serum</div>
-          <div class="product-name">Radiance Serum</div>
-          <div class="product-desc">Vitamin C brightening serum for luminous, even-toned skin</div>
+          <h2 class="product-name">Radiance Serum</h2>
+          <p class="product-desc">Vitamin C brightening serum for luminous, even-toned skin.</p>
           <div class="product-footer">
             <span class="product-price">$88</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add Radiance Serum to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card" data-cat="moisturiser">
-        <img src="images/glasscream.jpg" class="product-card-img">
+      <article class="product-card" data-cat="moisturiser">
+        <img src="images/glasscream.jpg" class="product-card-img" alt="Hydra Cream moisturiser with deep moisture skincare formula" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Moisturiser</div>
-          <div class="product-name">Hydra Cream</div>
-          <div class="product-desc">Deep moisture face cream with hyaluronic acid</div>
+          <h2 class="product-name">Hydra Cream</h2>
+          <p class="product-desc">Deep moisture face cream with hyaluronic acid.</p>
           <div class="product-footer">
             <span class="product-price">$54</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add Hydra Cream to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card" data-cat="toner">
-        <img src="images/ordinary.jpg" class="product-card-img">
+      <article class="product-card" data-cat="toner">
+        <img src="images/ordinary.jpg" class="product-card-img" alt="Glow Essence botanical toner for natural skincare routines" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Toner</div>
-          <div class="product-name">Glow Essence</div>
-          <div class="product-desc">Revitalising toner with botanical extracts</div>
+          <h2 class="product-name">Glow Essence</h2>
+          <p class="product-desc">Revitalising toner with botanical extracts.</p>
           <div class="product-footer">
             <span class="product-price">$72</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add Glow Essence toner to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card" data-cat="cleanser">
-        <img src="images/clean.png" class="product-card-img">
+      <article class="product-card" data-cat="cleanser">
+        <img src="images/clean.png" class="product-card-img" alt="Pore Cleanser face wash for gentle daily cleansing" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Cleanser</div>
-          <div class="product-name">Pore Cleanser</div>
-          <div class="product-desc">Gentle foaming face wash for all skin types</div>
+          <h2 class="product-name">Pore Cleanser</h2>
+          <p class="product-desc">Gentle foaming face wash for all skin types.</p>
           <div class="product-footer">
             <span class="product-price">$43</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add Pore Cleanser to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card" data-cat="mask">
-        <img src="images/patches.jpg" class="product-card-img">
+      <article class="product-card" data-cat="mask">
+        <img src="images/patches.jpg" class="product-card-img" alt="Hydra Patches overnight face mask for intense hydration" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Mask</div>
-          <div class="product-name">Hydra Patches</div>
-          <div class="product-desc">Rejuvenating overnight hydration face mask</div>
+          <h2 class="product-name">Hydra Patches</h2>
+          <p class="product-desc">Rejuvenating overnight hydration face mask.</p>
           <div class="product-footer">
             <span class="product-price">$86</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add Hydra Patches mask to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card" data-cat="serum">
-        <img src="images/whitecream.png" class="product-card-img">
+      <article class="product-card" data-cat="serum">
+        <img src="images/whitecream.png" class="product-card-img" alt="Antioxidant Serum with vitamin E and green tea extract" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Serum</div>
-          <div class="product-name">Antioxidant Serum</div>
-          <div class="product-desc">Protective serum with vitamin E and green tea</div>
+          <h2 class="product-name">Antioxidant Serum</h2>
+          <p class="product-desc">Protective serum with vitamin E and green tea.</p>
           <div class="product-footer">
             <span class="product-price">$65</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add Antioxidant Serum to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card" data-cat="moisturiser">
-        <img src="images/greencream.jpg" class="product-card-img">
+      <article class="product-card" data-cat="moisturiser">
+        <img src="images/greencream.jpg" class="product-card-img" alt="AURA Cream moisturiser with organic facial care ingredients" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Moisturiser</div>
-          <div class="product-name">Cream</div>
-          <div class="product-desc">Revitalising facial oil with organic extracts</div>
+          <h2 class="product-name">Cream</h2>
+          <p class="product-desc">Revitalising facial oil with organic extracts.</p>
           <div class="product-footer">
             <span class="product-price">$39</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add AURA Cream moisturiser to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card" data-cat="serum">
-        <img src="images/ordinary.jpg" class="product-card-img">
+      <article class="product-card" data-cat="serum">
+        <img src="images/ordinary.jpg" class="product-card-img" alt="Eye Renewal Cream designed to reduce fine lines around the eyes" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Eye Care</div>
-          <div class="product-name">Eye Renewal Cream</div>
-          <div class="product-desc">Firming eye cream to reduce fine lines</div>
+          <h2 class="product-name">Eye Renewal Cream</h2>
+          <p class="product-desc">Firming eye cream to reduce fine lines.</p>
           <div class="product-footer">
             <span class="product-price">$16</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add Eye Renewal Cream to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card full" data-cat="mask">
-        <img src="images/mask.png" class="product-card-img">
+      <article class="product-card full" data-cat="mask">
+        <img src="images/mask.png" class="product-card-img" alt="Exfoliating clay face mask for deep cleansing and smooth texture" loading="lazy">
         <div class="product-card-body">
           <div class="product-badge">Mask</div>
-          <div class="product-name">Exfoliating Mask</div>
-          <div class="product-desc">Purifying clay mask for deep cleansing</div>
+          <h2 class="product-name">Exfoliating Mask</h2>
+          <p class="product-desc">Purifying clay mask for deep cleansing.</p>
           <div class="product-footer">
             <span class="product-price">$40</span>
-            <button class="btn-cart">Add to Cart</button>
+            <button class="btn-cart" type="button" aria-label="Add Exfoliating Mask to cart">Add to Cart</button>
           </div>
         </div>
-      </div>
-
+      </article>
     </div>
   </section>
+</main>
 
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">AURA</a>
-        <p>Natural skincare for radiant, healthy skin.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Customer Service</h4>
-        <ul>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="#">Shipping Info</a></li>
-          <li><a href="#">Returns</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#" class="social-link">IG</a>
-          <a href="#" class="social-link">FB</a>
-          <a href="#" class="social-link">PT</a>
-        </div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">AURA</a>
+      <p>Natural skincare products for radiant, healthy skin.</p>
+    </div>
+    <div class="footer-col">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About AURA</a></li>
+        <li><a href="contact.html">Contact Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Customer Service</h2>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#shipping-information">Shipping Information</a></li>
+        <li><a href="contact.html#returns-policy">Returns Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2>Follow Us</h2>
+      <div class="social-links">
+        <a href="https://www.instagram.com/" class="social-link" aria-label="Visit AURA on Instagram">Instagram</a>
+        <a href="https://www.facebook.com/" class="social-link" aria-label="Visit AURA on Facebook">Facebook</a>
+        <a href="https://www.pinterest.com/" class="social-link" aria-label="Visit AURA on Pinterest">Pinterest</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 AURA Skincare. All rights reserved.</div>
-  </footer>
-
-</div>
+  </div>
+  <div class="footer-bottom">© 2026 AURA Skincare. All rights reserved.</div>
+</footer>
 </body>
 </html>

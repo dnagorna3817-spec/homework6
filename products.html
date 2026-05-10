@@ -81,14 +81,40 @@
 <header class="site-header">
   <nav aria-label="Primary navigation">
     <a href="index.html" class="nav-logo">AURA</a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primaryMenu">
       <li><a href="index.html">Home</a></li>
       <li><a href="products.html" class="active">Products</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <div class="nav-actions">
+      <button class="cart-toggle" type="button" aria-label="Open shopping cart">
+        Cart <span class="cart-count">0</span>
+      </button>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primaryMenu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 </header>
+
+<aside class="cart-drawer" aria-label="Shopping cart">
+  <div class="cart-drawer-header">
+    <h2>Your Cart</h2>
+    <button class="cart-close" type="button" aria-label="Close shopping cart">×</button>
+  </div>
+  <div class="cart-items">
+    <p class="cart-empty">Your cart is empty.</p>
+  </div>
+  <div class="cart-summary">
+    <span>Total</span>
+    <strong class="cart-total">$0</strong>
+  </div>
+  <button class="btn-primary clear-cart" type="button">Clear Cart</button>
+</aside>
+<div class="cart-overlay"></div>
 
 <main class="page-wrap" id="main-content">
   <section class="page-hero" aria-labelledby="products-title">
@@ -96,7 +122,17 @@
     <p class="section-sub" style="margin-bottom:0;">Discover our clean skincare collection of serums, moisturisers, cleansers, toners, and masks carefully formulated for glowing, balanced skin.</p>
   </section>
 
+  <div class="filter-bar" aria-label="Filter skincare products by category">
+    <button class="filter-btn active" type="button" data-filter="all">All</button>
+    <button class="filter-btn" type="button" data-filter="serum">Serums</button>
+    <button class="filter-btn" type="button" data-filter="moisturiser">Moisturisers</button>
+    <button class="filter-btn" type="button" data-filter="toner">Toners</button>
+    <button class="filter-btn" type="button" data-filter="cleanser">Cleansers</button>
+    <button class="filter-btn" type="button" data-filter="mask">Masks</button>
+  </div>
+
   <section class="products-section">
+    <p class="cart-status" aria-live="polite">Your cart is empty.</p>
     <div class="products-grid-2col" id="productsGrid">
       <article class="product-card" data-cat="serum">
         <img src="images/mask.png" class="product-card-img" alt="Radiance Serum skincare bottle with vitamin C brightening formula" loading="lazy">
@@ -252,5 +288,7 @@
   </div>
   <div class="footer-bottom">© 2026 AURA Skincare. All rights reserved.</div>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
